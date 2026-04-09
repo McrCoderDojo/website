@@ -13,7 +13,7 @@
       <h1 class="page-title">${title}</h1>
     </div>
     <div class="entry-content full">
-      <div class="grid-item" tal:repeat="post python:posts[::-1]">
+      <div class="grid-item" tal:repeat="post posts">
         <tal:block tal:condition="post.cover_image">
           <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/images/${post.cover_image}" alt="" /></a>
         </tal:block>

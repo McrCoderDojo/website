@@ -18,7 +18,7 @@
         <p>Our volunteer mentors (and young people) write blog posts about the ongoings with CoderDojo.</p>
       </div>
       <div class="entry-content full">
-        <div class="grid-item" tal:repeat="post python:[p for p in posts[::-1] if 'events' not in p.tags]">
+        <div class="grid-item" tal:repeat="post python:[p for p in posts if 'events' not in p.tags]">
           <tal:block tal:condition="post.cover_image">
             <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/images/${post.cover_image}" alt="" /></a>
           </tal:block>
