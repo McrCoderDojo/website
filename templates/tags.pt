@@ -1,0 +1,23 @@
+<div metal:use-macro="layout">
+  <div metal:fill-slot="head" tal:omit-tag="1">
+    <meta name="description" content="Tags index for Manchester CoderDojo blog posts" />
+    <meta property="og:url" content="https://mcrcoderdojo.org.uk/blog/tags/" />
+    <meta property="og:title" content="Tags | Manchester CoderDojo" />
+    <meta property="og:description" content="Tags index for Manchester CoderDojo blog posts" />
+  </div>
+
+  <div metal:fill-slot="title" tal:omit-tag="1">Tags</div>
+
+  <section metal:fill-slot="content">
+    <div class="page-header">
+      <h1 class="page-title">Tags</h1>
+    </div>
+    <div class="entry-content">
+      <ul>
+        <li tal:repeat="(tag, tag_posts) tags.items()">
+          <a href="/blog/tags/${tag}/">${tag.replace("-", " ")}</a> (${len(tag_posts)})
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>

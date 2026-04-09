@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://mcrcoderdojo.org.uk/</loc>
+  </url>
+  <url>
+    <loc>https://mcrcoderdojo.org.uk/blog/</loc>
+  </url>
+  <url>
+    <loc>https://mcrcoderdojo.org.uk/blog/archive/</loc>
+  </url>
+  <url>
+    <loc>https://mcrcoderdojo.org.uk/blog/tags/</loc>
+  </url>
+  <url tal:repeat="page pages">
+    <loc>https://mcrcoderdojo.org.uk/${page.link}/</loc>
+  </url>
+  <url tal:repeat="post posts">
+    <loc>https://mcrcoderdojo.org.uk/${post.link}/</loc>
+    <lastmod>${post.modified.isoformat(timespec="seconds")}</lastmod>
+  </url>
+  <url tal:repeat="tag tags">
+    <loc>https://mcrcoderdojo.org.uk/blog/tags/${tag}/</loc>
+  </url>
+  <url tal:repeat="year years">
+    <loc>https://mcrcoderdojo.org.uk/blog/${year}/</loc>
+  </url>
+  <url tal:repeat="(year, month) months">
+    <loc>https://mcrcoderdojo.org.uk/blog/${year}/${month}/</loc>
+  </url>
+</urlset>

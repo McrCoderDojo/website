@@ -1,0 +1,51 @@
+<p>
+ At today’s Manchester CoderDojo at
+ <a href="http://www.thesharpproject.co.uk/">
+  The Sharp Project
+ </a>
+ , we embarked upon our three-month (three-meetup) project to try and build the “World’s Largest CoderDojo Rube Goldberg Machine”.
+</p>
+<p>
+ This is a machine that is part-physical, part-virtual, and is all about connecting up real and online things to build a chain of events that span the physical and virtual, different ages and skill sets, various hardware and software platforms … a chain of events that will do, well, we’re not sure yet, except that it will be a lot of fun.
+</p>
+<p>
+ We started experimenting today with Python and Scratch.
+ <a href="http://wiki.scratch.mit.edu/wiki/Remote_Sensor_Connections">
+  Scratch enables remote connections
+ </a>
+ via port 42001 and we wrote a simple Python script to connect to that port and listen out for
+ <a href="http://wiki.scratch.mit.edu/wiki/Broadcast">
+  broadcast messages
+ </a>
+ from Scratch. That was fairly straightforward, and we even managed to send broadcast messages
+ <em>
+  to
+ </em>
+ Scratch as well as receive them
+ <em>
+  from
+ </em>
+ Scratch.
+</p>
+<p>
+ So we decided to go a step further. Why not connect to the interwebs and place some data somewhere? A good platform for experimentation is Google Apps Script, which is a JavaScript-based glue language running on a platform, with myriad library services, that makes it very easy to manipulate Google Drive content – for example, spreadsheets – and tons of other stuff too.
+</p>
+<p>
+ With this goal in mind, we extended the Python script to send some data to a Google Apps Script, which we set up to act as a published web service (platform-as-a-service FTW!), which in turn wrote data to a Google spreadsheet. No particular reason, but why not? And not only were the results immediately visible, but also in a place that encouraged further linking and triggering.
+</p>
+<p>
+ I recorded a short screencast of all of this in action,
+ <a href="http://youtu.be/g3cj9spvMdo">
+  showing just a few of the connectivity building blocks we’ll need to build our Rube Goldberg machine
+ </a>
+ .
+</p>
+<p>
+ The screencast is here:
+ <a href="http://youtu.be/g3cj9spvMdo">
+  http://youtu.be/g3cj9spvMdo
+ </a>
+</p>
+<p>
+ Interested in helping out? Come along to next month’s CoderDojo!
+</p>

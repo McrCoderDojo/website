@@ -1,0 +1,206 @@
+/* Custom styles */
+
+.site-content .entry-content.team,
+.site-content .entry-content.full {
+	margin: 0;
+	max-width: 100%;
+}
+
+.user-bio, .grid-item {
+	width: 23%;
+    height: 260px;
+	padding: 0 1%;
+	float: left;
+	margin: 20px 0;
+}
+
+@media screen and (max-width: 780px) {
+	.user-bio {
+		width: 98%;
+	}
+}
+
+.user-bio.endcol {
+	clear: both;
+}
+
+.grid-item {
+	text-align: center;
+}
+
+.grid-item img {
+	border: 3px solid #24890d;
+    width: 150px;
+    height: 150px
+}
+
+.grid-item img:hover {
+	opacity: 0.85;
+}
+
+.grid-item h2 {
+	margin: 10px 0 0;
+}
+
+.grid-item h2 a {
+	font-size: 16px;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.grid-item .date,
+.grid-item .venue,
+.grid-item .author {
+	color: #24890d;
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
+.widget_mcd_social_icons_widget a img {
+	margin: 10px 3px;
+}
+
+.author-photo {
+	width: 40%;
+	float: left;
+}
+
+.author-bio {
+	width: 60%;
+	float: left;
+}
+
+.col {
+	width: 50%;
+	float: left;
+}
+
+#map-canvas img {
+	max-width: none;
+}
+			/* Hyperlinks on pages,posts, comments etc*/
+.entry-content a,
+.entry-summary a,
+.page-content a,
+.comment-content a {
+    text-decoration: none;
+    color: #000;
+    background: repeating-linear-gradient(#FFF, #FFF 67%, #FFD800 68%, #FFD800 100%);
+}
+
+.entry-content a:hover,
+.entry-summary a:hover,
+.page-content a:hover,
+.comment-content a:hover {
+    background: #FFD800;
+}
+a:focus {
+	outline: none;
+	background: none;
+}
+
+/* Hyperlinks in widgets */
+.widget a:hover {
+    color: #FFD800;
+}
+
+/* Grid items eg "Recent Events" : colours */
+.grid-item .date,
+.grid-item .venue,
+.grid-item .author {
+    color: #000;
+}
+.grid-item a,
+.grid-item a:hover {
+    background: none;
+}
+
+.grid-item img,
+.grid-item img:hover {
+    border: 1.5px solid #FFD800;
+    padding: 8px;
+}
+
+.grid-item h2 a {
+    background: repeating-linear-gradient(#FFF, #FFF 67%, #FFD800 68%, #FFD800 100%);
+}
+.grid-item h2 a:hover {
+    background: #FFD800;
+}
+
+/* Search in main Navigation */
+.search-toggle {
+    background-color: #ffd800;
+}
+.search-toggle:before {
+    color: #000;
+}
+.search-toggle:hover,
+.search-toggle.active {
+    background-color: #FFD800;
+}
+.search-box {
+    background-color: #FFD800;
+}
+
+/* Main Navigation */
+.site-navigation .current_page_item > a,
+.site-navigation .current_page_ancestor > a,
+.site-navigation .current-menu-item > a,
+.site-navigation .current-menu-ancestor > a {
+    color: #FFD800;
+}
+.primary-navigation li.focus > a {
+    background-color: #FFD800;
+    outline: none;
+    color: #000;
+}
+.menu-toggle:before {
+    color: #FFD800;
+}
+
+/* States */
+.site-navigation a:hover {
+    color: #FFD800;
+}
+.primary-navigation li:hover > a, 
+.primary-navigation li:active > a, 
+.primary-navigation li:focus > a {
+    background-color: #FFD800;
+    color: #000;
+}
+
+/* Selected text */
+::selection {
+    background: #FFD800;
+    color: #000;
+}
+
+/* Buttons */
+button,
+.contributor-posts-link,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background-color: #FFD800;
+	color: #000;
+}
+button:hover,
+button:focus,
+.contributor-posts-link:hover,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+	background-color: #FFD800;
+	color: #000;
+}
+button:active,
+.contributor-posts-link:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	background-color: #FFD800;
+}		

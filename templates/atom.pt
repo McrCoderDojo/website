@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Manchester CoderDojo Blog</title>
+  <link href="https://mcrcoderdojo.org.uk/blog/" />
+  <link href="https://mcrcoderdojo.org.uk/blog/atom.xml" rel="self" />
+  <id>https://mcrcoderdojo.org.uk/blog/</id>
+  <author>
+    <name>Manchester CoderDojo</name>
+  </author>
+  <updated>${now.isoformat(timespec="seconds")}</updated>
+
+  <entry tal:repeat="post posts">
+    <title><![CDATA[${structure:post.title}]]></title>
+    <link href="https://mcrcoderdojo.org.uk/${post.link}/" />
+    <id>https://mcrcoderdojo.org.uk/${post.link}</id>
+    <published>${post.published.isoformat(timespec="seconds")}</published>
+    <updated>${post.modified.isoformat(timespec="seconds")}</updated>
+    <category tal:repeat="tag post.tags" term="${tag}" />
+    <summary><![CDATA[${structure:post.excerpt}]]></summary>
+    <content type="html"><![CDATA[${structure:post.html}]]></content>
+  </entry>
+</feed>

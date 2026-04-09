@@ -1,0 +1,24 @@
+<div metal:use-macro="layout">
+  <div metal:fill-slot="head" tal:omit-tag="1">
+    <meta name="description" content="${page.description}" />
+    <meta property="og:url" content="https://mcrcoderdojo.org.uk/${page.slug}/" />
+    <meta property="og:title" content="${page.title} | Manchester CoderDojo" />
+    <meta property="og:description" content="${page.description}" />
+  </div>
+
+  <div metal:fill-slot="title" tal:omit-tag="1">${page.title}</div>
+
+  <section metal:fill-slot="content">
+    <article tal:attributes="class python:'post has-post-thumbnail hentry' if page.cover_image else 'post'">
+      <div tal:condition="page.cover_image" class="post-thumbnail">
+        <img src="/${page.slug}/images/${page.cover_image}" alt="" />
+      </div>
+      <header class="entry-header">
+        <h1 class="entry-title">${page.title}</h1>
+      </header>
+      <div class="entry-content">
+        <div tal:content="structure page.html"></div>
+      </div>
+    </article>
+  </section>
+</div>

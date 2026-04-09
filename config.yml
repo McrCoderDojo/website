@@ -1,0 +1,7 @@
+build:
+  pages_dir: content/pages
+  posts_dir: content/posts
+  static_dir: static
+  templates_dir: templates
+  output_dir: www
+  blog_root: blog
