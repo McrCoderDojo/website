@@ -1,7 +1,7 @@
 <div metal:use-macro="layout" tal:define="body_extra_class string: full-width">
   <div metal:fill-slot="head" tal:omit-tag="1">
     <meta name="description" content="Manchester CoderDojo blog - ${title}" />
-    <meta property="og:url" content="https://mcrcoderdojo.org.uk/${link}/" />
+    <meta property="og:url" content="${site.config.base_url}/${link}" />
     <meta property="og:title" content="${title} | Manchester CoderDojo" />
     <meta property="og:description" content="Manchester CoderDojo blog - ${title}" />
   </div>

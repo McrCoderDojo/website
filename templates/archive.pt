@@ -1,7 +1,7 @@
 <div metal:use-macro="layout">
   <div metal:fill-slot="head" tal:omit-tag="1">
     <meta name="description" content="Manchester CoderDojo blog archive" />
-    <meta property="og:url" content="https://mcrcoderdojo.org.uk/${link}/" />
+    <meta property="og:url" content="${site.config.base_url}/${link}" />
     <meta property="og:title" content="${title} | Manchester CoderDojo" />
     <meta property="og:description" content="Manchester CoderDojo blog archive" />
   </div>
@@ -13,7 +13,7 @@
       <h1 class="page-title">${title}</h1>
     </div>
     <div class="entry-content">
-      <div tal:repeat="(year, year_posts) archive.items()">
+      <div tal:repeat="(year, year_posts) site.archive.items()">
         <h2><a href="/blog/${year}/">${year}</a></h2>
         <ul>
           <li tal:repeat="post year_posts">
