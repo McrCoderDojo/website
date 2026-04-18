@@ -1,7 +1,18 @@
+csv_dir: csv
+templates_dir: templates
+base_url: https://mcrcoderdojo.org.uk
+
 build:
-  pages_dir: content/pages
   posts_dir: content/posts
+  pages_dir: content/pages
   static_dir: static
-  templates_dir: templates
-  output_dir: www
   blog_root: blog
+  output_dir: www
+
+logs:
+  logs_dir: apache2
+  pattern: "mcrcoderdojo.org.uk-access*"
+
+analytics:
+  output_dir: analytics
+  manifest_path: www/manifest.json
