@@ -1,3 +1,5 @@
+<!-- This template is used to display the events page -->
+
 <div metal:use-macro="layout" tal:define="body_extra_class string: full-width">
   <div metal:fill-slot="head" tal:omit-tag="1">
     <meta name="description" content="Manchester CoderDojo blog - ${title}" />
@@ -16,19 +18,29 @@
       <header class="entry-header">
         <h1 class="entry-title">Events</h1>
       </header>
-      <div class="entry-content full">
-        <tal:block tal:repeat="post posts">
-        <div class="grid-item">
-          <tal:block tal:condition="post.cover_image">
-            <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/${post.thumbnail}" alt="" /></a>
-          </tal:block>
-          <tal:block tal:condition="not post.cover_image">
-            <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.png" alt="" /></a>
-          </tal:block>
-          <h2><a href="/${post.link}/" tal:content="structure post.title"></a></h2>
-          <span class="date">${post.published.strftime("%-d %B %Y")}</span>
-        </div>
-        </tal:block>
+      <div tal:condition="any([p for p in site.posts if 'events' in p.tags and p.published.date() >= site.now.date()])" class="entry-content full">
+        <h2><a href="/posts/tags/events/">Upcoming Events</a></h2>
+          <div class="grid-item" tal:repeat="post python:[p for p in site.posts if 'events' in p.tags and p.published.date() >= site.now.date()]">
+            <tal:block tal:condition="post.cover_image">
+              <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/${post.thumbnail}" alt="" /></a>
+            </tal:block>
+            <tal:block tal:condition="not post.cover_image">
+              <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.png" alt="" /></a>
+            </tal:block>
+            <h2><a href="/${post.link}/" tal:content="structure post.title"></a></h2>
+          </div>
+      </div>
+      <div tal:condition="any([p for p in site.posts if 'events' in p.tags and p.published.date() < site.now.date()])" class="entry-content full">
+        <h2><a href="/posts/tags/events/">Recent Events</a></h2>
+          <div class="grid-item" tal:repeat="post python:[p for p in site.posts if 'events' in p.tags and p.published.date() < site.now.date()]">
+            <tal:block tal:condition="post.cover_image">
+              <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/${post.thumbnail}" alt="" /></a>
+            </tal:block>
+            <tal:block tal:condition="not post.cover_image">
+              <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.png" alt="" /></a>
+            </tal:block>
+            <h2><a href="/${post.link}/" tal:content="structure post.title"></a></h2>
+          </div>
       </div>
     </div>
   </section>
