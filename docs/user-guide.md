@@ -6,7 +6,7 @@ It is recommended that editors push to the `draft` branch and create a Pull Requ
 so they can review the changes on the draft website at `draft.mcrcoderdojo.org.uk`.
 
 Content is in [content](content/), organised by [pages](content/pages/) and [posts](content/posts/).
-Posts are further organised by type (purely for neatness) as explained below.
+Posts are further organised by type (purely for neatness) as explained
 
 A post or page has a metadata file containing things like title, cover image and published date.
 
@@ -28,7 +28,7 @@ example the homepage uses [home.pt](templates/home.pt); and general pages use
 
 - Page content is in `index.html` or `index.md`
 
-- Images are in `images`
+- Images are in `images` (see the images section below)
 
 ### Edit a page
 
@@ -58,7 +58,7 @@ contents to it.
 
 - Page content is in `index.md` or `index.html`
 
-- Images are in `images`
+- Images are in `images` (see the images section below)
 
 ### Edit a blog post or event
 
@@ -85,7 +85,56 @@ tags:
 
 We have preserved old newsletters (which are just posts) in the
 [content/posts/newsletters](content/posts/newsletters/) folder. There is no intention for this to be
-revived or reused, and there is no index of them except that they remain in the blog index.
+revived or reused, and there is no list of them except that they remain in the blog index.
+
+## Images
+
+Images can be added to pages and posts by adding them to the relevant `images` folder and including
+an image tag in the markdown or HTML content, referring to the image's relative location e.g.
+`images/coderdodjo.png`.
+
+Markdown:
+
+```markdown
+![](images/coderdojo.png)
+```
+
+HTML:
+
+```html
+<img src="images/coderdojo.png" />
+```
+
+**Images must be no wider than 1024px. Please reduce the size before pushing or uploading**.
+
+### Cover images
+
+Pages and posts have cover images which appear at the top of the page above the title:
+
+![](cover.png)
+
+Cover images are set in the `meta.yml` file:
+
+```yml
+cover_image: coderdojo.png
+```
+
+**Cover images must be no wider than 1024px. Please reduce the size before pushing or uploading**.
+
+### Thumbnails
+
+Posts have thumbnail images which appear in a grid with other posts:
+
+![](thumbnails.png)
+
+Thumbnail images are set in the `meta.yml` file:
+
+```yml
+thumbnail: coderdojo_thumb.png
+```
+
+**Thumbnail images must be square and should ideally be exactly 150px x 150px, but must be no bigger
+than 1024px x 1024px. Please reduce the size before pushing or uploading**.
 
 ## Advanced
 
