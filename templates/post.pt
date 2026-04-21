@@ -11,7 +11,7 @@
   <section metal:fill-slot="content">
     <article tal:attributes="class python:'post has-post-thumbnail hentry' if post.cover_image else 'post'">
       <div tal:condition="post.cover_image" class="post-thumbnail">
-        <img src="/${post.link}/images/${post.cover_image}" alt="" />
+        <img src="/${post.link}/${post.cover_image}" alt="" />
       </div>
       <header class="entry-header">
         <div class="entry-meta">
@@ -24,20 +24,6 @@
       <div class="entry-content">
         <div tal:content="structure post.html"></div>
       </div>
-      <footer class="entry-footer">
-        <div tal:condition="post.tags" class="cat-links">
-          Tags: <span tal:repeat="tag post.tags"><a href="/blog/tags/${tag}/">${tag.replace("-", " ")}</a><span tal:condition="not:repeat.tag.end">, </span></span>
-        </div>
-        <nav class="navigation post-navigation">
-          <div tal:condition="prev_post" class="nav-previous">
-            &laquo; <a href="/${prev_post.link}" rel="prev" tal:content="structure prev_post.title"></a>
-          </div>
-          <div tal:condition="next_post" class="nav-next">
-            <a href="/${next_post.link}" rel="next" tal:content="structure next_post.title"></a> &raquo;
-          </div>
-        </nav>
-        <p><a href="/blog/">See all posts</a> | <a href="/blog/archive/">Archive</a></p>
-      </footer>
     </article>
   </section>
 </div>

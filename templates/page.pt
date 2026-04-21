@@ -11,7 +11,7 @@
   <section metal:fill-slot="content">
     <article tal:attributes="class python:'post has-post-thumbnail hentry' if page.cover_image else 'post'">
       <div tal:condition="page.cover_image" class="post-thumbnail">
-        <img src="/${page.slug}/images/${page.cover_image}" alt="" />
+        <img src="/${page.slug}/${page.cover_image}" alt="" />
       </div>
       <header class="entry-header">
         <h1 class="entry-title">${page.title}</h1>

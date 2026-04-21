@@ -6,7 +6,7 @@ build:
   posts_dir: content/posts
   pages_dir: content/pages
   static_dir: static
-  blog_root: blog
+  blog_root: posts
   output_dir: www
 
 logs:

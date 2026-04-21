@@ -15,15 +15,17 @@
       <div class="post-thumbnail">
         <img width="1024" height="576" src="/images/mcrcoderdojo-kit-1024x576.jpg" alt="" />
       </div>
-      <div class="page-header">
-        <h1 class="page-title">Blog</h1>
+      <header class="entry-header">
+        <h1 class="entry-title">Blog</h1>
+      </header>
+      <div class="entry-content blog">
         <p>Our volunteer mentors (and young people) write blog posts about the ongoings with CoderDojo.</p>
       </div>
       <div class="entry-content full">
         <tal:block tal:repeat="post site.posts">
-        <div tal:condition="'event' not in post.tags" class="grid-item">
+        <div tal:condition="'events' not in post.tags" class="grid-item">
           <tal:block tal:condition="post.cover_image">
-            <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/images/${post.cover_image}" alt="" /></a>
+            <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/${post.cover_image}" alt="" /></a>
           </tal:block>
           <tal:block tal:condition="not post.cover_image">
             <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.png" alt="" /></a>
@@ -33,14 +35,6 @@
           <tal:block tal:condition="post.author"><br /><span class="author">${post.author}</span></tal:block>
         </div>
         </tal:block>
-      </div>
-      <div class="entry-content">
-        <nav>
-          <ul>
-            <li><a href="/blog/archive/">Archive</a></li>
-            <li><a href="/blog/tags/">All tags</a></li>
-          </ul>
-        </nav>
       </div>
     </div>
   </section>

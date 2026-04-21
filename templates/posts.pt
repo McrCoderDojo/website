@@ -9,30 +9,27 @@
   <div metal:fill-slot="title" tal:omit-tag="1">${title}</div>
 
   <section metal:fill-slot="content">
-    <div class="page-header">
-      <h1 class="page-title">${title}</h1>
-    </div>
-    <div class="entry-content full">
-      <div class="grid-item" tal:repeat="post posts">
-        <tal:block tal:condition="post.cover_image">
-          <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/images/${post.cover_image}" alt="" /></a>
-        </tal:block>
-        <tal:block tal:condition="not post.cover_image">
-          <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.png" alt="" /></a>
-        </tal:block>
-        <h2><a href="/${post.link}/" tal:content="structure post.title"></a></h2>
-        <span class="date">${post.published.strftime("%-d %B %Y")}</span>
-        <tal:block tal:condition="post.author"><br /><span class="author">${post.author}</span></tal:block>
+    <div class="hentry has-post-thumbnail">
+      <div class="post-thumbnail">
+        <img width="1024" height="576" src="/images/YELLOW-LOGO.jpg" alt="" />
       </div>
-    </div>
-    <div class="entry-content">
-      <nav>
-        <ul>
-          <li><a href="/blog/">All posts</a></li>
-          <li><a href="/blog/archive/">Archive</a></li>
-          <li><a href="/blog/tags/">All tags</a></li>
-        </ul>
-      </nav>
+      <div class="page-header">
+        <h1 class="page-title">Events</h1>
+      </div>
+      <div class="entry-content full">
+        <tal:block tal:repeat="post posts">
+        <div class="grid-item">
+          <tal:block tal:condition="post.cover_image">
+            <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/${post.cover_image}" alt="" /></a>
+          </tal:block>
+          <tal:block tal:condition="not post.cover_image">
+            <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.png" alt="" /></a>
+          </tal:block>
+          <h2><a href="/${post.link}/" tal:content="structure post.title"></a></h2>
+          <span class="date">${post.published.strftime("%-d %B %Y")}</span>
+        </div>
+        </tal:block>
+      </div>
     </div>
   </section>
 </div>
