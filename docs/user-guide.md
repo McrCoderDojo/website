@@ -81,6 +81,11 @@ tags:
 - events
 ```
 
+Note that for events, the `published` field in `meta.yml` is used to represent the **event date**.
+Events with dates in the future are shown under "Upcoming Events" on the homepage and Events page.
+However, due to the nature of the site being statically built, events aren't automatically removed
+from this section over time, so a change triggering a rebuild would be required.
+
 ### Newsletters
 
 We have preserved old newsletters (which are just posts) in the
