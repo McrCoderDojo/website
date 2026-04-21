@@ -19,9 +19,21 @@
       <div class="entry-content">
         <div tal:content="structure page.html"></div>
       </div>
-      <div class="entry-content full">
-        <h2><a href="/blog/tags/events/">Recent Events</a></h2>
-          <div class="grid-item" tal:repeat="post python:[p for p in site.posts if 'events' in p.tags][:4]">
+      <div tal:condition="any([p for p in site.posts if 'events' in p.tags and p.published.date() >= site.now.date()])" class="entry-content full">
+        <h2><a href="/posts/tags/events/">Upcoming Events</a></h2>
+          <div class="grid-item" tal:repeat="post python:[p for p in site.posts if 'events' in p.tags and p.published.date() >= site.now.date()][:4]">
+            <tal:block tal:condition="post.cover_image">
+              <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/${post.thumbnail}" alt="" /></a>
+            </tal:block>
+            <tal:block tal:condition="not post.cover_image">
+              <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.png" alt="" /></a>
+            </tal:block>
+            <h2><a href="/${post.link}/" tal:content="structure post.title"></a></h2>
+          </div>
+      </div>
+      <div tal:condition="any([p for p in site.posts if 'events' in p.tags and p.published.date() < site.now.date()])" class="entry-content full">
+        <h2><a href="/posts/tags/events/">Recent Events</a></h2>
+          <div class="grid-item" tal:repeat="post python:[p for p in site.posts if 'events' in p.tags and p.published.date() < site.now.date()][:4]">
             <tal:block tal:condition="post.cover_image">
               <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/${post.thumbnail}" alt="" /></a>
             </tal:block>
@@ -32,7 +44,7 @@
           </div>
       </div>
       <div class="entry-content full">
-        <h2><a href="/blog/">Latest Blog Posts</a></h2>
+        <h2><a href="/posts/">Latest Blog Posts</a></h2>
           <div class="grid-item" tal:repeat="post python:[p for p in site.posts if 'events' not in p.tags][:4]">
             <tal:block tal:condition="post.cover_image">
               <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/${post.thumbnail}" alt="" /></a>
