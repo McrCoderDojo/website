@@ -13,14 +13,14 @@
       <div class="post-thumbnail">
         <img width="1024" height="576" src="/images/YELLOW-LOGO.jpg" alt="" />
       </div>
-      <div class="page-header">
-        <h1 class="page-title">Events</h1>
-      </div>
+      <header class="entry-header">
+        <h1 class="entry-title">Events</h1>
+      </header>
       <div class="entry-content full">
         <tal:block tal:repeat="post posts">
         <div class="grid-item">
           <tal:block tal:condition="post.cover_image">
-            <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/${post.cover_image}" alt="" /></a>
+            <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/${post.thumbnail}" alt="" /></a>
           </tal:block>
           <tal:block tal:condition="not post.cover_image">
             <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.png" alt="" /></a>

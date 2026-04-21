@@ -25,7 +25,7 @@
         <tal:block tal:repeat="post site.posts">
         <div tal:condition="'events' not in post.tags" class="grid-item">
           <tal:block tal:condition="post.cover_image">
-            <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/${post.cover_image}" alt="" /></a>
+            <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/${post.thumbnail}" alt="" /></a>
           </tal:block>
           <tal:block tal:condition="not post.cover_image">
             <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.png" alt="" /></a>
