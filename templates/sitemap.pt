@@ -7,10 +7,7 @@
     <loc>${site.config.base_url}/posts/</loc>
   </url>
   <url>
-    <loc>${site.config.base_url}/posts/archive/</loc>
-  </url>
-  <url>
-    <loc>${site.config.base_url}/posts/tags/</loc>
+    <loc>${site.config.base_url}/posts/tags/events/</loc>
   </url>
   <tal:block tal:repeat="page site.pages">
   <url tal:condition="page.slug != '404'">
@@ -20,14 +17,5 @@
   <url tal:repeat="post site.posts">
     <loc>${site.config.base_url}/${post.link}/</loc>
     <lastmod>${post.modified.isoformat(timespec="seconds")}</lastmod>
-  </url>
-  <url tal:repeat="tag site.tags">
-    <loc>${site.config.base_url}/posts/tags/${tag}/</loc>
-  </url>
-  <url tal:repeat="year years">
-    <loc>${site.config.base_url}/posts/${year}/</loc>
-  </url>
-  <url tal:repeat="(year, month) months">
-    <loc>${site.config.base_url}/posts/${year}/${month}/</loc>
   </url>
 </urlset>
