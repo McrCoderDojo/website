@@ -1,7 +1,7 @@
 <div metal:use-macro="layout">
   <div metal:fill-slot="head" tal:omit-tag="1">
     <meta name="description" content="Tags index for Manchester CoderDojo blog posts" />
-    <meta property="og:url" content="${site.config.base_url}/blog/tags/" />
+    <meta property="og:url" content="${site.config.base_url}/posts/tags/" />
     <meta property="og:title" content="Tags | Manchester CoderDojo" />
     <meta property="og:description" content="Tags index for Manchester CoderDojo blog posts" />
   </div>
@@ -15,7 +15,7 @@
     <div class="entry-content">
       <ul>
         <li tal:repeat="(tag, tag_posts) site.tags.items()">
-          <a href="/blog/tags/${tag}/">${tag.replace("-", " ")}</a> (${len(tag_posts)})
+          <a href="/posts/tags/${tag}/">${tag.replace("-", " ")}</a> (${len(tag_posts)})
         </li>
       </ul>
     </div>

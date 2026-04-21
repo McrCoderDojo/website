@@ -1,6 +1,6 @@
 <div metal:use-macro="layout" tal:define="body_extra_class string: full-width">
   <div metal:fill-slot="head" tal:omit-tag="1">
-    <meta property="og:url" content="${site.config.base_url}/blog/" />
+    <meta property="og:url" content="${site.config.base_url}/posts/" />
     <meta property="og:title" content="Manchester CoderDojo blog" />
     <meta name="twitter:title" content="Manchester CoderDojo blog" />
     <meta name="description" content="Manchester CoderDojo blog" />
