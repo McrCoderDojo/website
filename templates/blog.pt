@@ -24,10 +24,10 @@
       <div class="entry-content full">
         <tal:block tal:repeat="post site.posts">
         <div tal:condition="'events' not in post.tags" class="grid-item">
-          <tal:block tal:condition="post.cover_image">
+          <tal:block tal:condition="post.thumbnail">
             <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/${post.thumbnail}" alt="" /></a>
           </tal:block>
-          <tal:block tal:condition="not post.cover_image">
+          <tal:block tal:condition="not post.thumbnail">
             <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.png" alt="" /></a>
           </tal:block>
           <h2><a href="/${post.link}/" tal:content="structure post.title"></a></h2>
