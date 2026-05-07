@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <title>Manchester CoderDojo | <span metal:define-slot="title">A youth club to code &amp; make things</span></title>
-  <link rel="icon" type="image/png" href="/images/coderdojo.png" />
+  <link rel="icon" type="image/png" href="/images/coderdojo.webp" />
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <link rel="dns-prefetch" href="//fonts.googleapis.com" />
   <link rel="alternate" type="application/atom+xml" title="Manchester CoderDojo Feed" href="/posts/atom.xml" />
@@ -59,21 +59,21 @@
       </div>
 
       <div id="secondary">
-        <a href="/"><img src="/images/mcrcoderdojo.png" width="162" height="162" class="logo" alt="Manchester CoderDojo" /></a>
+        <a href="/"><img src="/images/mcrcoderdojo.webp" width="162" height="162" class="logo" alt="Manchester CoderDojo" /></a>
         <h2 class="site-description">A youth club to code &amp; make things</h2>
         <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
           <aside class="widget widget_custom_html">
             <h1 class="widget-title">Supported by</h1>
             <div class="textwidget custom-html-widget">
-              <a href="/venue/"><img src="/ada.png" alt="Ada Manchester" /></a>
+              <a href="/venue/"><img src="/ada.webp" alt="Ada Manchester" /></a>
             </div>
           </aside>
           <aside class="widget widget_mcd_social_icons_widget">
             <h1 class="widget-title">Manchester CoderDojo on...</h1>
-            <a href="http://www.facebook.com/McrCoderDojo" title="Facebook"><img src="/images/facebook-32x32.png" width="32" height="32" alt="Facebook" /></a>
-            <a href="http://www.youtube.com/user/mcrcoderdojo" title="YouTube"><img src="/images/youtube-32x32.png" width="32" height="32" alt="YouTube" /></a>
-            <a href="http://flickr.com/mcrcoderdojo" title="Flickr"><img src="/images/flickr-32x32.png" width="32" height="32" alt="Flickr" /></a>
-            <a href="http://github.com/mcrcoderdojo" title="GitHub"><img src="/images/github-32x32.png" width="32" height="32" alt="GitHub" /></a>
+            <a href="http://www.facebook.com/McrCoderDojo" title="Facebook"><img src="/images/facebook-32x32.webp" width="32" height="32" alt="Facebook" /></a>
+            <a href="http://www.youtube.com/user/mcrcoderdojo" title="YouTube"><img src="/images/youtube-32x32.webp" width="32" height="32" alt="YouTube" /></a>
+            <a href="http://flickr.com/mcrcoderdojo" title="Flickr"><img src="/images/flickr-32x32.webp" width="32" height="32" alt="Flickr" /></a>
+            <a href="http://github.com/mcrcoderdojo" title="GitHub"><img src="/images/github-32x32.webp" width="32" height="32" alt="GitHub" /></a>
           </aside>
           <aside class="widget widget_recent_entries">
             <h1 class="widget-title">Recent Posts</h1>

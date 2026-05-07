@@ -13,7 +13,7 @@
   <section metal:fill-slot="content">
     <div class="hentry has-post-thumbnail">
       <div class="post-thumbnail">
-        <img width="1024" height="576" src="/images/YELLOW-LOGO.jpg" alt="" />
+        <img width="1024" height="576" src="/images/YELLOW-LOGO.webp" alt="" />
       </div>
       <header class="entry-header">
         <h1 class="entry-title">Events</h1>
@@ -25,7 +25,7 @@
               <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/${post.thumbnail}" alt="" /></a>
             </tal:block>
             <tal:block tal:condition="not post.thumbnail">
-              <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.png" alt="" /></a>
+              <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.webp" alt="" /></a>
             </tal:block>
             <h2><a href="/${post.link}/" tal:content="structure post.title"></a></h2>
           </div>
@@ -37,7 +37,7 @@
               <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/${post.thumbnail}" alt="" /></a>
             </tal:block>
             <tal:block tal:condition="not post.thumbnail">
-              <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.png" alt="" /></a>
+              <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.webp" alt="" /></a>
             </tal:block>
             <h2><a href="/${post.link}/" tal:content="structure post.title"></a></h2>
           </div>
