@@ -1,7 +1,7 @@
 <div metal:use-macro="layout" tal:define="body_extra_class string: full-width">
   <div metal:fill-slot="head" tal:omit-tag="1">
     <meta name="description" content="Manchester CoderDojo - a volunteer-led community group for young people learning to code and make things" />
-    <meta property="og:url" content="https://mcrcoderdojo.org.uk/" />
+    <meta property="og:url" content="${site.config.base_url}/" />
     <meta property="og:title" content="Manchester CoderDojo" />
     <meta property="og:description" content="Manchester CoderDojo - a volunteer-led community group for young people learning to code and make things" />
   </div>
@@ -11,7 +11,7 @@
   <section metal:fill-slot="content">
     <article class="post has-post-thumbnail hentry">
       <div class="post-thumbnail">
-        <img width="1024" height="576" src="/images/DSC06736-2.jpg" alt="" />
+        <img width="1024" height="576" src="/images/DSC06736-2.webp" alt="" />
       </div>
       <header class="entry-header">
         <h1 class="entry-title">${page.title}</h1>
@@ -19,26 +19,38 @@
       <div class="entry-content">
         <div tal:content="structure page.html"></div>
       </div>
-      <div class="entry-content full">
-        <h2><a href="/blog/tags/events/">Recent Events</a></h2>
-          <div class="grid-item" tal:repeat="post python:[p for p in posts if 'events' in p.tags][:4]">
-            <tal:block tal:condition="post.cover_image">
-              <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/images/${post.cover_image}" alt="" /></a>
+      <div tal:condition="any([p for p in site.posts if 'events' in p.tags and p.published.date() >= site.now.date()])" class="entry-content full">
+        <h2><a href="/posts/tags/events/">Upcoming Events</a></h2>
+          <div class="grid-item" tal:repeat="post python:[p for p in site.posts if 'events' in p.tags and p.published.date() >= site.now.date()][:4]">
+            <tal:block tal:condition="post.thumbnail">
+              <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/${post.thumbnail}" alt="" /></a>
             </tal:block>
-            <tal:block tal:condition="not post.cover_image">
-              <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.png" alt="" /></a>
+            <tal:block tal:condition="not post.thumbnail">
+              <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.webp" alt="" /></a>
+            </tal:block>
+            <h2><a href="/${post.link}/" tal:content="structure post.title"></a></h2>
+          </div>
+      </div>
+      <div tal:condition="any([p for p in site.posts if 'events' in p.tags and p.published.date() < site.now.date()])" class="entry-content full">
+        <h2><a href="/posts/tags/events/">Recent Events</a></h2>
+          <div class="grid-item" tal:repeat="post python:[p for p in site.posts if 'events' in p.tags and p.published.date() < site.now.date()][:4]">
+            <tal:block tal:condition="post.thumbnail">
+              <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/${post.thumbnail}" alt="" /></a>
+            </tal:block>
+            <tal:block tal:condition="not post.thumbnail">
+              <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.webp" alt="" /></a>
             </tal:block>
             <h2><a href="/${post.link}/" tal:content="structure post.title"></a></h2>
           </div>
       </div>
       <div class="entry-content full">
-        <h2><a href="/blog/">Latest Blog Posts</a></h2>
-          <div class="grid-item" tal:repeat="post python:[p for p in posts if 'events' not in p.tags][:4]">
-            <tal:block tal:condition="post.cover_image">
-              <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/images/${post.cover_image}" alt="" /></a>
+        <h2><a href="/posts/">Latest Blog Posts</a></h2>
+          <div class="grid-item" tal:repeat="post python:[p for p in site.posts if 'events' not in p.tags][:4]">
+            <tal:block tal:condition="post.thumbnail">
+              <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/${post.thumbnail}" alt="" /></a>
             </tal:block>
-            <tal:block tal:condition="not post.cover_image">
-              <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.png" alt="" /></a>
+            <tal:block tal:condition="not post.thumbnail">
+              <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.webp" alt="" /></a>
             </tal:block>
             <h2><a href="/${post.link}/" tal:content="structure post.title"></a></h2>
             <span class="date">${post.published.strftime("%-d %B %Y")}</span>

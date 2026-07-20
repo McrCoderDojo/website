@@ -1,7 +1,9 @@
+<!-- This template is used to display the events page -->
+
 <div metal:use-macro="layout" tal:define="body_extra_class string: full-width">
   <div metal:fill-slot="head" tal:omit-tag="1">
     <meta name="description" content="Manchester CoderDojo blog - ${title}" />
-    <meta property="og:url" content="https://mcrcoderdojo.org.uk/${link}/" />
+    <meta property="og:url" content="${site.config.base_url}/${link}" />
     <meta property="og:title" content="${title} | Manchester CoderDojo" />
     <meta property="og:description" content="Manchester CoderDojo blog - ${title}" />
   </div>
@@ -9,30 +11,37 @@
   <div metal:fill-slot="title" tal:omit-tag="1">${title}</div>
 
   <section metal:fill-slot="content">
-    <div class="page-header">
-      <h1 class="page-title">${title}</h1>
-    </div>
-    <div class="entry-content full">
-      <div class="grid-item" tal:repeat="post posts">
-        <tal:block tal:condition="post.cover_image">
-          <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/images/${post.cover_image}" alt="" /></a>
-        </tal:block>
-        <tal:block tal:condition="not post.cover_image">
-          <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.png" alt="" /></a>
-        </tal:block>
-        <h2><a href="/${post.link}/" tal:content="structure post.title"></a></h2>
-        <span class="date">${post.published.strftime("%-d %B %Y")}</span>
-        <tal:block tal:condition="post.author"><br /><span class="author">${post.author}</span></tal:block>
+    <div class="hentry has-post-thumbnail">
+      <div class="post-thumbnail">
+        <img width="1024" height="576" src="/images/YELLOW-LOGO.webp" alt="" />
       </div>
-    </div>
-    <div class="entry-content">
-      <nav>
-        <ul>
-          <li><a href="/blog/">All posts</a></li>
-          <li><a href="/blog/archive/">Archive</a></li>
-          <li><a href="/blog/tags/">All tags</a></li>
-        </ul>
-      </nav>
+      <header class="entry-header">
+        <h1 class="entry-title">Events</h1>
+      </header>
+      <div tal:condition="any([p for p in site.posts if 'events' in p.tags and p.published.date() >= site.now.date()])" class="entry-content full">
+        <h2><a href="/posts/tags/events/">Upcoming Events</a></h2>
+          <div class="grid-item" tal:repeat="post python:[p for p in site.posts if 'events' in p.tags and p.published.date() >= site.now.date()]">
+            <tal:block tal:condition="post.thumbnail">
+              <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/${post.thumbnail}" alt="" /></a>
+            </tal:block>
+            <tal:block tal:condition="not post.thumbnail">
+              <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.webp" alt="" /></a>
+            </tal:block>
+            <h2><a href="/${post.link}/" tal:content="structure post.title"></a></h2>
+          </div>
+      </div>
+      <div tal:condition="any([p for p in site.posts if 'events' in p.tags and p.published.date() < site.now.date()])" class="entry-content full">
+        <h2><a href="/posts/tags/events/">Recent Events</a></h2>
+          <div class="grid-item" tal:repeat="post python:[p for p in site.posts if 'events' in p.tags and p.published.date() < site.now.date()]">
+            <tal:block tal:condition="post.thumbnail">
+              <a href="/${post.link}/"><img width="150" height="150" src="/${post.link}/${post.thumbnail}" alt="" /></a>
+            </tal:block>
+            <tal:block tal:condition="not post.thumbnail">
+              <a href="/${post.link}/"><img width="150" height="150" src="/images/coderdojo.webp" alt="" /></a>
+            </tal:block>
+            <h2><a href="/${post.link}/" tal:content="structure post.title"></a></h2>
+          </div>
+      </div>
     </div>
   </section>
 </div>

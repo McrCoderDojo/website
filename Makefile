@@ -1,4 +1,4 @@
-export BEEMO_CONFIG=config.yml
+BEEMO_CONFIG=config.yml
 
 .PHONY: build logs analytics serve serve-analytics
 

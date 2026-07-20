@@ -1,0 +1,138 @@
+<p>
+  This month's event at the Sharp Project was a great success, not least because of the superb space that we are able to use. As well as the huge ground floor area (known as “The Campus”) we have the facility to use a large self-contained room upstairs (“Gold 150”) which has a big screen and plenty of table space, chairs, power and wifi (add coffee, and you have the essentials for any programmer!)
+</p>
+<p style="text-align: center;">
+  <img alt="" class="size-full wp-image-262 aligncenter" decoding="async" height="142" loading="lazy" src="images/y.webp" width="163"/>
+</p>
+<p>
+ We used this room for a couple of related sessions that were focused on our younger coders and budding coders: Scratch for Beginners, and an Intermediate Scratch follow on session. Both sessions were very well attended, and I think it’s fair to say that everyone – the kids, the parents, the helpers, and me – had a great time.
+</p>
+<p>
+  <img alt="BgCaCYTIUAAIW3q" class="alignnone size-full wp-image-267" decoding="async" height="450" loading="lazy" sizes="auto, (max-width: 600px) 100vw, 600px" src="images/BgCaCYTIUAAIW3q.webp" width="600"/>
+</p>
+<p>
+ <strong>
+  Scratch for Beginners
+ </strong>
+</p>
+<p>
+ With the Scratch for Beginners session we all built together, step by step, a simple Aquarium, getting to grips with the user interface of the Scratch environment (we used
+ <a href="http://scratch.mit.edu/">
+  Scratch 2.0 online
+ </a>
+ ) and finding out about Sprites, Costumes, the Stage, Backdrops and of course Scripts. We took a heuristic approach to getting some fish to swim around, fixing problems that cropped up one at a time:
+</p>
+<ul>
+ <li>
+  “How can I get the fish to swim without having to keep clicking the 'move' block?"
+ </li>
+ <li>
+  "Why is the fish stuck off the side of the screen?"
+ </li>
+ <li>
+  "Why is the fish swimming upside down?"
+ </li>
+ <li>
+  "How can I get more than one fish?"
+ </li>
+</ul>
+<p>
+ and so on. It's important to help newcomers to become comfortable with the development environment and I think at the end of the session, they were.
+</p>
+<p>
+ One common challenge with understanding in Scratch is the difference between a sprite and a costume. We spent time making sure that the kids grokked the difference.
+</p>
+<p>
+  <img alt="BgCLspIIUAA-LBY" class="alignnone size-full wp-image-268" decoding="async" height="447" loading="lazy" sizes="auto, (max-width: 599px) 100vw, 599px" src="images/BgCLspIIUAA-LBY.webp" width="599"/>
+</p>
+<p>
+ <strong>
+  Intermediate Scratch
+ </strong>
+</p>
+<p>
+ Building on the previous session, we then spent an hour working towards a “Tamagochi Aquarium”. This is a tank where you can bring fish to life with a click, have them created with an initial random speed, size, costume and direction, and with an initial number of energy points. As they swim around, their energy is slowly depleted, and at a certain stage a fish will tell you that it’s hungry. Unless you feed it (by clicking on it as it moves) the energy eventually falls to zero and the fish disappears with a ‘pop!'
+</p>
+<p>
+ We managed to get through a lot of the construction, right up to the point where we are now ready to add the energy points / hunger mechanics. This is what we covered:
+</p>
+<ul>
+ <li>
+  <strong>
+   Modularisation of code
+  </strong>
+  : we defined the "fish setup" and the "fish swim" code sections as new blocks (with "
+  <a href="http://wiki.scratch.mit.edu/wiki/More_Blocks">
+   More Blocks
+  </a>
+  ", a Scratch 2.0 feature) and reused them when we needed.
+ </li>
+ <li>
+  <strong>
+   Random numbers and maths
+  </strong>
+  : we used the random number generator a few times in different contexts, and one fun part was determining the initial size of a newly spawned fish with a random number between 1 and 4, multiplied by 25, then applied as a size percentage to the sprite. We went through this “by hand” first, and it was a lot of fun.
+ </li>
+ <li>
+  <strong>
+   Conditions
+  </strong>
+  : We used if..then..else to decide on an initial direction, from a random binary option (I didn’t use the word binary but we got the idea that there were only two possibilities). Further, we looked at the diamond shape that represented a condition and examined various condition mechanics (in the
+  <a href="http://wiki.scratch.mit.edu/wiki/Operators">
+   Operators
+  </a>
+  category) and talked about a condition being either
+  <em>
+   true
+  </em>
+  or
+  <em>
+   false
+  </em>
+  , one or the other, relating that in turn to the
+  <em>
+   then
+  </em>
+  and
+  <em>
+   else
+  </em>
+  of the if statement.
+ </li>
+ <li>
+  <strong>
+   Variables
+  </strong>
+  : Of the concepts introduced, this was probably one of the toughest, although they got straight away (it was their suggestion) that a variable is all about “varying”. We used a variable to store a sprite’s speed and then referenced it in the
+  <a href="http://wiki.scratch.mit.edu/wiki/Move_()_Steps_(block)">
+   Move Steps
+  </a>
+  block.
+ </li>
+ <li>
+  <strong>
+   Cloning
+  </strong>
+  : Not particularly a programming concept, but we used Scratch 2.0’s cloning feature, to be able to create more fish. This had the agreeable side-effect, however, of underlining the concept of events, for example, with
+  <a href="http://wiki.scratch.mit.edu/wiki/When_I_Start_as_a_Clone_(block)">
+   When I start as a clone
+  </a>
+  , and also of instance variables(!) – every sprite had their own initial size, speed, costume, direction. Again, I didn’t use the term “instance” but the concept of different copies of variables, with their respective values, was something that we covered.
+ </li>
+</ul>
+<p>
+ So all in all I think a successful session. And special thanks to Anisha and Amanda for being great helpers! Next time we’ll build in the energy points / hunger mechanics – something to look forward to!
+</p>
+<p>
+  <img alt="BgCQkBsCUAA2DaC" class="alignnone size-full wp-image-269" decoding="async" height="399" loading="lazy" sizes="auto, (max-width: 600px) 100vw, 600px" src="images/BgCQkBsCUAA2DaC.webp" width="600"/>
+</p>
+<p>
+ But if you can't wait,
+ <a href="http://scratch.mit.edu/projects/17683100/#editor">
+  I've shared the complete Tamagochi Aquarium
+ </a>
+ for you to have a look at, play with, and most importantly, build upon and improve.
+</p>
+<p>
+ Share and enjoy!
+</p>

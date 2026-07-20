@@ -12,6 +12,12 @@ Blog posts were imported from WordPress using [scripts/wp.py](scripts/wp.py). Ev
 from the WordPress site using [scripts/scrape_events.py](scripts/scrape_events.py). Pages were
 imported using [scripts/wp_pages.py](scripts/wp_pages.py).
 
+See the [USER GUIDE](docs/user-guide.md) for instructions on how to manage the content.
+
+Note that commits to the `main` branch are automatically deployed to the live site (provided the
+build succeeds); and commits to the `draft` branch are automatically deployed to
+`draft.mcrcoderdojo.org.uk`.
+
 ## Build
 
 Requires [beemo](https://github.com/bennuttall/beemo) installed. Log processing additionally requires `beemo[logs]`.
