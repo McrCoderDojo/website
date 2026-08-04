@@ -11,7 +11,8 @@ build:
 
 logs:
   logs_dir: apache2
-  pattern: "mcrcoderdojo.org.uk-access*"
+  pattern: "mcrcoderdojo.org.uk-access*gz"
+  live_pattern: "mcrcoderdojo.org.uk-access*"
 
 analytics:
   output_dir: analytics
