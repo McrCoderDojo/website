@@ -11,8 +11,8 @@
     .container { max-width: 640px; width: 100%; margin: 0 auto; }
     h1 { font-size: 1.5rem; margin-bottom: 1.5rem; }
     .cards { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
-    .card { background: #fff; border-radius: 8px; padding: 1.25rem 1.75rem; box-shadow: 0 1px 3px rgba(0,0,0,.1); flex: 1 1 140px; }
-    .card .value { font-size: 2rem; font-weight: 700; word-break: break-word; }
+    .card { background: #fff; border-radius: 8px; padding: 1.25rem 1.75rem; box-shadow: 0 1px 3px rgba(0,0,0,.1); flex: 1 1 auto; min-width: 140px; }
+    .card .value { font-size: 2rem; font-weight: 700; overflow-wrap: break-word; }
     .card .label { font-size: .85rem; color: #666; margin-top: .2rem; }
     .panel { background: #fff; border-radius: 8px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,.1); margin-bottom: 1.5rem; }
     .panel h2 { font-size: 1rem; margin-bottom: 1rem; color: #444; }
