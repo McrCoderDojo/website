@@ -83,7 +83,7 @@
   </div>
   </tal:block>
 
-  <div class="panel">
+  <div class="panel" tal:condition="python: nav['type'] not in ('summary', 'month')">
     <h2>Hits by month</h2>
     <canvas id="monthChart"></canvas>
   </div>
@@ -239,14 +239,16 @@
 </div>
 
 <script>
-new Chart(document.getElementById('monthChart'), {
-  type: 'bar',
-  data: {
-    labels: <tal:block replace="structure python: json.dumps([datetime.strptime(m, '%Y-%m').strftime('%B %Y') for m in report['months']])" />,
-    datasets: [{ data: <tal:block replace="structure json.dumps(report['hits_by_month'])" />, backgroundColor: '#4f81c7', borderRadius: 3 }]
-  },
-  options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
-});
+if (document.getElementById('monthChart')) {
+  new Chart(document.getElementById('monthChart'), {
+    type: 'bar',
+    data: {
+      labels: <tal:block replace="structure python: json.dumps([datetime.strptime(m, '%Y-%m').strftime('%B %Y') for m in report['months']])" />,
+      datasets: [{ data: <tal:block replace="structure json.dumps(report['hits_by_month'])" />, backgroundColor: '#4f81c7', borderRadius: 3 }]
+    },
+    options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
+  });
+}
 
 new Chart(document.getElementById('dayChart'), {
   type: 'bar',
